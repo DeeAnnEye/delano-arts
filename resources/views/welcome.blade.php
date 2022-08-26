@@ -5,25 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <title>Donut</title>
+        <title>Delano Arts.</title>
     </head>
     <body>
-       <!-- This example requires Tailwind CSS v2.0+ -->
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full">
-  <body class="h-full">
-  ```
--->
-<!-- This example requires Tailwind CSS v2.0+ -->
+      
 <nav class="bg-gray-400">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <div class="text-pink-600 text-2xl font-bold" >Donut</div>
+        <div class="text-pink-600 text-2xl font-bold" >Delano<br>Arts.</div>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
