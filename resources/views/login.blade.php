@@ -14,7 +14,8 @@
     <div class="bg-white py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
     <div class="text-pink-600 text-center text-3xl font-bold" >Delano<br>Arts.</div>
     <h2 class="mt-2 mb-4 text-center text-xl tracking-tight font-bold text-gray-400">Sign in to your account</h2>
-      <form class="space-y-6" action="#" method="POST">
+      <form class="space-y-6" action="{{url('post-login')}}" method="POST">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700"> Email address </label>
           <div class="mt-1">
@@ -36,7 +37,7 @@
           </div>
 
           <div class="text-sm">
-            <a href="/register" class="font-medium text-pink-600 hover:text-pink-500"> New? Register </a>
+            <a href="/registration" class="font-medium text-pink-600 hover:text-pink-500"> New? Register </a>
           </div>
         </div>
 

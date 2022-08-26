@@ -14,11 +14,12 @@
     <div class="bg-white py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
     <div class="text-pink-600 text-center text-3xl font-bold" >Delano<br>Arts.</div>
     <h2 class="mt-2 mb-4 text-center text-xl tracking-tight font-bold text-gray-400">Create your account</h2>
-      <form class="space-y-6" action="#" method="POST">
+      <form class="space-y-6" action="{{url('post-registration')}}" method="POST">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div>
           <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
           <div class="mt-1">
-            <input id="name" name="name" type="name" autocomplete="name" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            <input id="name" name="name" type="text" autocomplete="name" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
           </div>
         </div>
 
@@ -43,7 +44,7 @@
           </div>
 
           <div class="text-sm">
-            <a href="/" class="font-medium text-pink-600 hover:text-pink-500"> Have an account? Login </a>
+            <a href="/login" class="font-medium text-pink-600 hover:text-pink-500"> Have an account? Login </a>
           </div>
         </div>
 

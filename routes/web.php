@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/', function () {
+//     return view('login');
+// });
+// Route::get('/register', function () {
+//     return view('register');
+// });
+
+Route::get('login', 'Auth\LoginController@index');
+Route::post('post-login', 'Auth\LoginController@postLogin');
+Route::get('registration', 'Auth\LoginController@registration');
+Route::post('post-registration', 'Auth\LoginController@postRegistration');
+// Route::get('welcome', 'JobController@index');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
