@@ -50,14 +50,8 @@ class LoginController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|min:3',
         ]);
-
-        // request()->validate([
-        // 'name' => 'required',
-        // 'email' => 'required|email|unique:users',
-        // 'password' => 'required|min:6',
-        // ]);
          
         $data = $request->all();
  
@@ -70,7 +64,8 @@ class LoginController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => Hash::make($data['password'])
+        'password' => Hash::make($data['password']),
+        'image' => NULL
       ]);
     }
 
