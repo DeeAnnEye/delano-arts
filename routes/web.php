@@ -14,6 +14,9 @@
 Route::get('welcome', function () {
     return view('welcome');
 });
+Route::get('profile', function () {
+    return view('profile');
+});
 // Route::get('welcome', 'JobController@index');
 Route::get('login', 'Auth\LoginController@index');
 Route::post('post-login', 'Auth\LoginController@postLogin');
