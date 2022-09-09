@@ -18,12 +18,12 @@
           <div class="text-pink-600 text-left text-xl font-bold" >Delano<br>Arts.</div>
           </div>
       <div class="mt-6 w-full flex-1 space-y-1 px-2">
-        <!-- Current: "bg-indigo-800 text-white", Default: "text-indigo-100 hover:bg-indigo-800 hover:text-white" -->
-        <a href="/welcome" class="text-indigo-100 hover:bg-pink-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
+        <!-- Current: "bg-pink-800 text-white", Default: "text-pink-100 hover:bg-pink-800 hover:text-white" -->
+        <a href="/welcome" class="text-pink-100 hover:bg-pink-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
           <!--
             Heroicon name: outline/home
 
-            Current: "text-white", Default: "text-indigo-300 group-hover:text-white"
+            Current: "text-white", Default: "text-pink-300 group-hover:text-white"
           -->
           <svg class="text-pink-300 group-hover:text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -70,8 +70,8 @@
             <h2 id="gallery-heading" class="sr-only">Recently viewed</h2>
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
               <li class="relative">
-                <!-- Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" -->
-                <div class="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
+                <!-- Current: "ring-2 ring-offset-2 ring-pink-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-pink-500" -->
+                <div class="ring-2 ring-offset-2 ring-pink-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
                   <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover pointer-events-none">
                   <button type="button" class="absolute inset-0 focus:outline-none">
@@ -82,8 +82,8 @@
                 <p class="pointer-events-none block text-sm font-medium text-gray-500">3.9 MB</p>
               </li>
               <li class="relative">
-                <!-- Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" -->
-                <div class="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
+                <!-- Current: "ring-2 ring-offset-2 ring-pink-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-pink-500" -->
+                <div class="ring-2 ring-offset-2 ring-pink-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
                   <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover pointer-events-none">
                   <button type="button" class="absolute inset-0 focus:outline-none">
@@ -94,8 +94,8 @@
                 <p class="pointer-events-none block text-sm font-medium text-gray-500">3.9 MB</p>
               </li>
               <li class="relative">
-                <!-- Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" -->
-                <div class="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
+                <!-- Current: "ring-2 ring-offset-2 ring-pink-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-pink-500" -->
+                <div class="ring-2 ring-offset-2 ring-pink-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
                   <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover pointer-events-none">
                   <button type="button" class="absolute inset-0 focus:outline-none">
@@ -117,7 +117,9 @@
                   <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                     <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                       <div>
+
                         <form action="{{url('upload')}}" method="POST" enctype="multipart/form-data">
+
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="mx-auto flex items-center justify-center">
                           <!-- Heroicon name: outline/check -->
@@ -143,9 +145,51 @@
                                       <label for="fileupload" class="relative cursor-pointer rounded-md bg-white font-medium text-pink-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-pink-500 focus-within:ring-offset-2 hover:text-pink-500">
                                         Choose file
                                       </label>
-                                      <input id="fileupload" name="fileupload" type="file" class="sr-only">
+                                      <input id="fileupload" name="file" type="file" class="sr-only">
                                     </div>
                                     <p class="imageText text-xs text-gray-500">PNG, JPG, GIF</p>
+                                  </div>
+                                </div>
+                                <div class="mt-2 ml-1 grid grid-cols-2 gap-4">
+                                 <div class="col-span-1 relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                      <input id="fantasy" name="fantasy" type="checkbox" value="fantasy" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="fantasy" class="font-medium text-gray-700">Fantasy</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-span-1 relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                      <input id="comic" name="comic" type="checkbox" value="comic" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="comic" class="font-medium text-gray-700">Comic Art</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-span-1 relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                      <input id="concept" name="concept" type="checkbox" value="concept" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="concept" class="font-medium text-gray-700">Concept Art</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-span-1 relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                      <input id="abstract" name="abstract" type="checkbox" value="abstract" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="abstract" class="font-medium text-gray-700">Abstract</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-span-1 relative flex items-start">
+                                    <div class="flex h-5 items-center">
+                                      <input id="illustration" name="illustration" type="checkbox" value="illustration" class="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="illustration" class="font-medium text-gray-700">Illustration</label>
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="mt-5 sm:mt-6">
@@ -211,7 +255,7 @@
             <h3 class="font-medium text-gray-900">Description</h3>
             <div class="mt-2 flex items-center justify-between">
               <p class="text-sm italic text-gray-500">Add a description to this image.</p>
-              <button type="button" class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <button type="button" class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500">
                 <!-- Heroicon name: mini/pencil -->
                 <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
@@ -221,7 +265,7 @@
             </div>
           </div>
           <!-- <div class="flex">
-            <button type="button" class="flex-1 rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Contact</button>
+            <button type="button" class="flex-1 rounded-md border border-transparent bg-pink-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Contact</button>
           </div> -->
         </div>
       </aside>
