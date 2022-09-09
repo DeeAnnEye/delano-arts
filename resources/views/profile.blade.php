@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <title>Delano Arts.</title>
     </head>
     <body>
@@ -116,6 +117,8 @@
                   <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                     <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                       <div>
+                        <form action="{{url('upload')}}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="mx-auto flex items-center justify-center">
                           <!-- Heroicon name: outline/check -->
                           <h3 class="text-lg font-medium leading-6 text-gray-900">Upload your Art</h3>
@@ -138,22 +141,22 @@
                                     </svg>
                                     <div class="flex text-sm text-gray-600">
                                       <label for="fileupload" class="relative cursor-pointer rounded-md bg-white font-medium text-pink-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-pink-500 focus-within:ring-offset-2 hover:text-pink-500">
-                                        <span>Choose file</span>
-                                        <input id="fileupload" name="fileupload" type="file" class="sr-only">
+                                        Choose file
                                       </label>
-                                     
+                                      <input id="fileupload" name="fileupload" type="file" class="sr-only">
                                     </div>
-                                    <p class="text-xs text-gray-500">PNG, JPG, GIF</p>
+                                    <p class="imageText text-xs text-gray-500">PNG, JPG, GIF</p>
                                   </div>
                                 </div>
                                 <div class="mt-5 sm:mt-6">
-                                  <button type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:text-sm">Upload Art</button>
+                                  <button type="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:text-sm">Upload Art</button>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                    </form>
                     </div>
                   </div>
                 </div>
@@ -232,6 +235,12 @@
             });
             $('.uploadArt').on('click', function(e){
                 $('.artModal').removeClass('hidden');
+            });
+            $('#fileupload').change(function() {
+            var i = $(this).prev('label').clone();
+            var file = $('#fileupload')[0].files[0].name;
+            $(this).prev('label').text(file);
+            $('.imageText').addClass('hidden');
             });
         });
     </script>
