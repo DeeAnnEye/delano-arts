@@ -28,9 +28,8 @@ class ArtController extends Controller
             if($art_id && $id){
             $data=array('user_id'=>$id,'art_id'=>$art_id);
             DB::table('user_art')->insert($data);
-            return 'yes2';
+            return redirect()->back()->with('message', 'Image Uploaded');
             }
-            return 'yes1';
         }
         
     }
