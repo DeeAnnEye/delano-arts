@@ -68,18 +68,25 @@
                 </svg>
                 Illustration
               </a>
+              <a href="/login" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <!-- Heroicon name: outline/map -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg>
+                Logout
+              </a>
             </div>
           </nav>
         </div>
         <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-          <a href="/profile" class="flex-shrink-0 w-full group block">
+          <a href="{{ url('/profile', Auth::user()->id) }}" class="flex-shrink-0 w-full group block">
             <div class="flex items-center">
               <div>
                 <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="">
               </div>
               <div class="ml-3">
-                <p class="text-sm font-medium text-pink-700 group-hover:text-gray-900">Whitney Francis</p>
-                <p class="text-xs font-medium text-gray-500 group-hover:text-pink-700">View profile</p>
+                <p class="text-sm font-medium text-pink-700 group-hover:text-gray-900">{{Auth::user()->name}}</p>
+                <p class="text-xs font-medium text-gray-500 ">View profile</p>
               </div>
             </div>
           </a>

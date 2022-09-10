@@ -11,6 +11,15 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ArtController extends Controller
 {
+    public function index(){
+        $id = Auth::user()->id;
+        $arts['data'] = DB::table('arts')
+            ->join('user_art', 'arts.id', '=', 'user_art.art_id')
+            ->where('user_art.user_id', '=', $id)
+            ->select('arts.*')
+            ->get();
+        return view('profile')->with("art",$arts);
+      }
     public function imageupload(Request $request){
         
         if($request->hasFile('file')){
@@ -30,6 +39,12 @@ class ArtController extends Controller
             DB::table('user_art')->insert($data);
             return redirect()->back()->with('message', 'Image Uploaded');
             }
+            else{
+                return redirect()->back()->with('error', 'Image Upload Failed');
+            }
+        }
+        else{
+            return redirect()->back()->with('error', 'Image Upload Failed');
         }
         
     }

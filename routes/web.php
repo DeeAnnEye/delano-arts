@@ -14,9 +14,7 @@
 Route::get('welcome', function () {
     return view('welcome');
 });
-Route::get('profile', function () {
-    return view('profile');
-});
+Route::get('profile/{id}', 'ArtController@index');
 Route::post('upload', 'ArtController@imageupload');
 // Route::get('welcome', 'JobController@index');
 Route::get('login', 'Auth\LoginController@index');
