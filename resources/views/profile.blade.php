@@ -10,7 +10,7 @@
         <title>Delano Arts.</title>
     </head>
     <body>
-<div class="flex h-full">
+<div class="flex h-screen">
   <!-- Narrow sidebar -->
   <div class="hidden w-28 overflow-y-auto bg-gray-400 md:block">
     <div class="flex w-full flex-col items-center py-6">
@@ -131,9 +131,9 @@
             
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
             @foreach($art['data'] as $art)  
-            <li class="artImage relative">
+            <li class="relative">
                 <!-- Current: "ring-2 ring-offset-2 ring-pink-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-pink-500" -->
-                <div class="imgRing group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
+                <div id="{{ $art->id }}" onclick="location.href='{{url('/imgdetail', $art->id)}}'" class="imgRing group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
                   <img src="{{ asset('storage/upload/' . $art->image) }}" alt="" class="object-cover pointer-events-none">
                   <button type="button" class="absolute inset-0 focus:outline-none">
@@ -246,16 +246,26 @@
       </main>
 
       <!-- Details sidebar -->
+      @if(session()->has('artname'))
       <div class="sidebar">
       <aside class="w-96 overflow-y-auto border-l border-gray-200 bg-white p-8 lg:block">
+      <div class="closeB absolute top-0 right-0 pt-2 pr-2 sm:block">
+          <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+            <span class="sr-only">Close</span>
+            <!-- Heroicon name: outline/x-mark -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
         <div class="space-y-6 pb-16">
           <div>
             <div class="aspect-w-6 aspect-h-7 block w-full overflow-hidden rounded-lg">
-              <img src="{{ asset('storage/upload/' . $art->image) }}" alt="" class="object-cover">
+              <img src="{{ asset('storage/upload/' . session('artimage')) }}" alt="" class="object-cover">
             </div>
             <div class="mt-4 flex items-start justify-between">
               <div>
-                <h2 class="text-lg font-medium text-gray-900"><span class="sr-only">Details for </span>{{ $art->name }}</h2>
+                <h2 class="text-lg font-medium text-gray-900"><span class="sr-only">Details for </span>{{ session('artname') }}</h2>
               </div>
             </div>
           </div>
@@ -269,17 +279,17 @@
 
               <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Created</dt>
-                <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime($art->created_at))}}</dd>
+                <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime(session('artcreated')))}}</dd>
               </div>
 
               <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Last modified</dt>
-                <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime($art->updated_at))}}</dd>
+                <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime(session('artupdated')))}}</dd>
               </div>
 
               <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Dimensions</dt>
-                <dd class="whitespace-nowrap text-gray-900">{{ $art->i_width }} x {{ $art->i_height }}</dd>
+                <dd class="whitespace-nowrap text-gray-900">{{ session('artwidth') }} x {{ session('artheight') }}</dd>
               </div>
 
             </dl>
@@ -303,6 +313,7 @@
         </div>
       </aside>
     </div>
+    @endif
     </div>
   </div>
 </div>
@@ -313,13 +324,18 @@
                 $('.artModal').addClass('hidden');
             });
 
+            $('.closeB').on('click', function(e){
+                $('.sidebar').addClass('hidden');
+            });
+
             $('.uploadArt').on('click', function(e){
                 $('.artModal').removeClass('hidden');
             });
 
-            // $('.artImage').on('click', function(e){
-            //     $('.imgRing').toggleClass('ring-2 ring-offset-2 ring-pink-500');
-            // });
+            $('.imgRing').on('click', function(e){
+            $('.artImage').removeClass('artImage ring-2 ring-offset-2 ring-pink-500'); 
+            $("#" + $(this).attr("id")).addClass('artImage ring-2 ring-offset-2 ring-pink-500');
+            });
 
             $('#fileupload').change(function() {
             var i = $(this).prev('label').clone();

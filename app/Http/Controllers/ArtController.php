@@ -48,5 +48,22 @@ class ArtController extends Controller
         }
         
     }
+    public static function getImgById($id){
+        $value=DB::table('arts')->where('id', $id)->first();
+        $name=$value->name;
+        $image=$value->image;
+        $width=$value->i_width;
+        $height=$value->i_height;
+        $created=$value->created_at;
+        $updated=$value->updated_at;
+
+        return redirect()->back()
+        ->with("artname",$name)
+        ->with("artimage",$image)
+        ->with("artwidth",$width)
+        ->with("artheight",$height)
+        ->with("artcreated",$created)
+        ->with("artupdated",$updated);
+      }
 
 }
