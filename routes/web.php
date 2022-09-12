@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
+
 Route::get('profile/{id}', 'ArtController@index');
 Route::get('imgdetail/{id}', 'ArtController@getImgById');
 Route::post('upload', 'ArtController@imageupload');
-// Route::get('welcome', 'JobController@index');
+Route::get('welcome', 'Auth\LoginController@welcome');
 Route::get('login', 'Auth\LoginController@index');
 Route::post('post-login', 'Auth\LoginController@postLogin');
 Route::get('registration', 'Auth\LoginController@registration');

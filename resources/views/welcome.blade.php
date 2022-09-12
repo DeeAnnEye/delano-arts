@@ -96,13 +96,15 @@
     <div class="mx-2 mt-2 flex flex-auto flex-col w-2/3 mb-2 max-h-screen overflow-y-auto scrollbar-hide min-h-0 "> 
        <!-- card start -->
     <ul role="list" class="grid grid-cols-3 gap-2">
+    @foreach($userData['data'] as $user)
+    @if($user->role =='2')
     <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
       <div class="flex-1 flex flex-col p-8">
         <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
+        <h3 class="mt-6 text-gray-900 text-sm font-medium">{{ $user->name }}</h3>
         <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
+          <dt class="sr-only">Email</dt>
+          <dd class="text-gray-500 text-sm">{{ $user->email }}</dd>
           <dt class="sr-only">Role</dt>
           <dd class="mt-3">
             <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
@@ -112,246 +114,28 @@
       <div>
         <div class="-mt-px flex divide-x divide-gray-200">
           <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+            <a href="" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
               <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
+              <span class="ml-3">See Profile</span>
             </a>
           </div>
         </div>
       </div>
     </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-      <div class="flex-1 flex flex-col p-8">
-        <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">Jane Cooper</h3>
-        <dl class="mt-1 flex-grow flex flex-col justify-between">
-          <dt class="sr-only">Title</dt>
-          <dd class="text-gray-500 text-sm">Paradigm Representative</dd>
-          <dt class="sr-only">Role</dt>
-          <dd class="mt-3">
-            <span class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200">
-          <div class="w-0 flex-1 flex">
-            <a href="mailto:janecooper@example.com" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-              <!-- Heroicon name: mini/envelope -->
-              <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-3">Contact</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
+    @endif
+    @endforeach
     <!-- card end -->
     </ul>
     </div>
     <div class="mx-2 mt-2 flex flex-auto flex-col w-1/3 max-h-screen mb-2 overflow-y-auto scrollbar-hide min-h-0 ">
     <ul role="list" class="grid grid-cols-2 gap-2">
+    @foreach($artData['data'] as $art)
     <li class="col-span-1">
     <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
+    <img class="h-50 w-50" src="{{ asset('storage/upload/' . $art->image) }}" alt="">
     </div>
     </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
-    <li class="col-span-1">
-    <div>
-    <img class="h-50 w-50" src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80" alt="">
-    </div>
-    </li>
+    @endforeach
     </ul>
     </div>
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
@@ -31,19 +33,23 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('welcome');
+            $artData['data']=DB::table('arts')->orderBy('id', 'asc')->get();   
+            $userData['data']=DB::table('users')->orderBy('id', 'asc')->get();        
+            return view('welcome')
+            ->with("artData",$artData)
+            ->with("userData",$userData);
         }
 
         return redirect('login')->with('error', 'Opps! You have entered invalid credentials');
     }
-    // public function welcome()
-    // {
- 
-    //   if(Auth::check()){
-    //     return view('welcome');
-    //   }
-    //    return Redirect::to("login")->withSuccess('Opps! You do not have access');
-    // }
+    public function welcome()
+    {
+            $artData['data']=DB::table('arts')->orderBy('id', 'asc')->get();   
+            $userData['data']=DB::table('users')->orderBy('id', 'asc')->get();        
+            return view('welcome')
+            ->with("artData",$artData)
+            ->with("userData",$userData);
+    }
 
     public function postRegistration(Request $request)
     {  
@@ -57,7 +63,11 @@ class LoginController extends Controller
  
         $check = $this->create($data);
        
-        return Redirect::to("welcome")->withSuccess('Great! You have Successfully loggedin');
+        $artData['data']=DB::table('arts')->orderBy('id', 'asc')->get();   
+        $userData['data']=DB::table('users')->orderBy('id', 'asc')->get();        
+        return view('welcome')
+        ->with("artData",$artData)
+        ->with("userData",$userData);
     }
     public function create(array $data)
     {

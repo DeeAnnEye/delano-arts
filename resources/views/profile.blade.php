@@ -10,7 +10,7 @@
         <title>Delano Arts.</title>
     </head>
     <body>
-<div class="flex h-screen">
+<div class="flex h-screen ">
   <!-- Narrow sidebar -->
   <div class="hidden w-28 overflow-y-auto bg-gray-400 md:block">
     <div class="flex w-full flex-col items-center py-6">
@@ -132,14 +132,15 @@
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
             @foreach($art['data'] as $art)  
             <li class="relative">
-                <!-- Current: "ring-2 ring-offset-2 ring-pink-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-pink-500" -->
-                <div id="{{ $art->id }}" onclick="location.href='{{url('/imgdetail', $art->id)}}'" class="imgRing group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
+                <a href="{{url('/imgdetail', $art->id)}}">
+                <div id="{{ $art->id }}" class="imgRing group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
                   <img src="{{ asset('storage/upload/' . $art->image) }}" alt="" class="object-cover pointer-events-none">
                   <button type="button" class="absolute inset-0 focus:outline-none">
                     <span class="sr-only">View details for IMG_4985.HEIC</span>
                   </button>
                 </div>
+                </a>
                 <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{{ $art->name }}</p>
                 <p class="pointer-events-none block text-sm font-medium text-gray-500">{{ $art->i_width }} x {{ $art->i_height }}</p>
               </li>             
