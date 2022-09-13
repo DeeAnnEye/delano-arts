@@ -128,7 +128,7 @@
           </div>
           <!-- Gallery -->
           <section class="mt-8 pb-16 " aria-labelledby="gallery-heading">
-            
+          @if(!$art['data']->isEmpty())
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
             @foreach($art['data'] as $art)  
             <li class="relative">
@@ -146,6 +146,9 @@
               </li>             
               @endforeach
             </ul>
+          @else
+              <h1 class="mt-40 ml-36 text-xl font-medium text-gray-600">Oops...No art uploaded yet.</h1>
+          @endif
           </section>
           <div class="artModal hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                 
