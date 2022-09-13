@@ -24,7 +24,7 @@
                             <div class="px-2 space-y-1">
                                 <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                                 <a href="#"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class="text-gray-600 bg-gray-50 hover:bg-gray-200 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/calendar -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
