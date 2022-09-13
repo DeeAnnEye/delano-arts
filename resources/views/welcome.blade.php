@@ -152,7 +152,7 @@
                                 <div>
                                     <div class="-mt-px flex divide-x divide-gray-200">
                                         <div class="w-0 flex-1 flex">
-                                            <a href=""
+                                            <a href="{{ url('/artist', $user->id) }}"
                                                 class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
                                                 <!-- Heroicon name: mini/envelope -->
                                                 <span class="ml-3">See Profile</span>

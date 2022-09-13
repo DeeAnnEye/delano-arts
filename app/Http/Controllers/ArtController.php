@@ -31,9 +31,13 @@ class ArtController extends Controller
 
             $data=array('name'=>$filename,"image"=>$filename,"i_height"=>$height,"i_width"=>$width);
             DB::table('arts')->insert($data);
+
             $value=DB::table('arts')->where('name', $filename)->first();
             $art_id=$value->id;
             $id = Auth::user()->id;
+
+            DB::table('users')->where('id', $id)->update(['role' => 2]);
+
             if($art_id && $id){
             $data=array('user_id'=>$id,'art_id'=>$art_id);
             DB::table('user_art')->insert($data);
