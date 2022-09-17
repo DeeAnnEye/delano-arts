@@ -1,3 +1,2 @@
-<h2>Art Commission</h2>
-<p>{{ $title }}</p>
+<h2>{{ $title }}</h2>
 <p>{{ $description }}</p>

@@ -16,7 +16,7 @@ class MailController extends Controller
         $data = $request->all();
         $email = Auth::user()->email;
         $name = Auth::user()->name;
-        $artist = $data['artist'];
+        $artist = $data['artistEmail'];
 
         Mail::send('mail', $data, function($message) use ($email,$name,$artist) {
             $message->to($artist, 'ART')->subject

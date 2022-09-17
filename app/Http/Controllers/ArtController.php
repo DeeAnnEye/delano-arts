@@ -69,5 +69,20 @@ class ArtController extends Controller
         ->with("artcreated",$created)
         ->with("artupdated",$updated);
       }
+    
+      public function getArtist($id)
+      {
+        $artist=DB::table('users')->where('id', $id)->first();
+
+        $arts['data'] = DB::table('arts')
+            ->join('user_art', 'arts.id', '=', 'user_art.art_id')
+            ->where('user_art.user_id', '=', $id)
+            ->select('arts.*')
+            ->get();
+        
+        return view('artist')
+            ->with("artist",$artist)
+            ->with("art",$arts);
+      }
 
 }
