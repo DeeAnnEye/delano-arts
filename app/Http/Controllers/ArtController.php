@@ -85,4 +85,18 @@ class ArtController extends Controller
             ->with("art",$arts);
       }
 
+      public function getArtById($id)
+      {
+        $arts['data'] = DB::table('arts')
+            ->join('art_category', 'arts.id', '=', 'art_category.art_id')
+            ->join('category', 'art_category.category_id', '=', 'category.id')
+            ->where('art_category.category_id', '=', $id)
+            ->select('arts.*')
+            ->get();
+        
+        return view('category')
+        ->with("art",$arts)
+        ->with("catId",$id);
+      }
+
 }

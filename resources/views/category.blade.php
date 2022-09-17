@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Delano Arts.</title>
 </head>
 
@@ -23,8 +25,8 @@
                         <nav class="mt-5 flex-1" aria-label="Sidebar">
                             <div class="px-2 space-y-1">
                                 <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                <a href="#"
-                                    class="text-gray-600 bg-gray-50 hover:bg-gray-200 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <a href="{{ url('/welcome') }}"
+                                    class="dashboard text-gray-600 bg-gray-50 hover:bg-gray-200 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/calendar -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -36,7 +38,7 @@
                                 </a>
 
                                 <a name="fantasy" href="{{ url('/category', 1) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class=" fantasy text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/calendar -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -48,7 +50,7 @@
                                 </a>
 
                                 <a name="concept art" href="{{ url('/category', 2) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class="text-gray-600 conceptart hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/user-group -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -60,7 +62,7 @@
                                 </a>
 
                                 <a name="abstract" href="{{ url('/category', 3) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class=" abstract text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/magnifying-glass-circle -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -72,7 +74,7 @@
                                 </a>
 
                                 <a name="game art" href="{{ url('/category', 6) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class="gameart text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                                         <!-- Heroicon name: outline/megaphone -->
                                         <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
@@ -82,7 +84,7 @@
 
 
                                 <a name="comic art" href="{{ url('/category', 4) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class="comicart text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/megaphone -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -94,7 +96,7 @@
                                 </a>
 
                                 <a name="illustration" href="{{ url('/category', 5) }}"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    class=" illustration text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Heroicon name: outline/map -->
                                     <svg class="text-gray-500 group-hover:text-gray-500 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -137,49 +139,9 @@
                 </div>
             </div>
             <div
-                class="mx-2 mt-2 flex flex-auto flex-col w-2/3 mb-2 max-h-screen overflow-y-auto scrollbar-hide min-h-0 ">
-                <!-- card start -->
-                <ul role="list" class="grid grid-cols-3 gap-2">
-                    @foreach ($userData['data'] as $user)
-                        @if ($user->role == '2')
-                            <li
-                                class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-                                <div class="flex-1 flex flex-col p-8">
-                                    <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full"
-                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
-                                        alt="">
-                                    <h3 class="mt-6 text-gray-900 text-sm font-medium">{{ $user->name }}</h3>
-                                    <dl class="mt-1 flex-grow flex flex-col justify-between">
-                                        <dt class="sr-only">Email</dt>
-                                        <dd class="text-gray-500 text-sm">{{ $user->email }}</dd>
-                                        <dt class="sr-only">Role</dt>
-                                        <dd class="mt-3">
-                                            <span
-                                                class="px-2 py-1 text-pink-800 text-xs font-medium bg-pink-100 rounded-full">Artist</span>
-                                        </dd>
-                                    </dl>
-                                </div>
-                                <div>
-                                    <div class="-mt-px flex divide-x divide-gray-200">
-                                        <div class="w-0 flex-1 flex">
-                                            <a href="{{ url('/artist', $user->id) }}"
-                                                class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-pink-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                                                <!-- Heroicon name: mini/envelope -->
-                                                <span class="ml-3">See Profile</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        @endif
-                    @endforeach
-                    <!-- card end -->
-                </ul>
-            </div>
-            <div
-                class="mx-2 mt-2 flex flex-auto flex-col w-1/3 max-h-screen mb-2 overflow-y-auto scrollbar-hide min-h-0 ">
+                class="mx-2 mt-2 flex flex-col w-full max-h-screen mb-2 overflow-y-auto scrollbar-hide min-h-0 ">
                 <ul role="list" class="grid grid-cols-2 gap-2">
-                    @foreach ($artData['data'] as $art)
+                    @foreach ($art['data'] as $art)
                         <li class="col-span-1">
                             <div>
                                 <img class="h-50 w-50" src="{{ asset('storage/upload/' . $art->image) }}"
@@ -194,6 +156,40 @@
 
     </div>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            data = {!! str_replace("'", "\'", json_encode($catId)) !!};
+
+            if(data === '1'){ 
+                $('.fantasy').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }else if(data === '2'){
+                $('.conceptart').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }
+            else if(data === '3'){
+                $('.abstract').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }
+            else if(data === '4'){
+                $('.comicart').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }
+            else if(data === '5'){
+                $('.illustration').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }
+            else if(data === '6'){
+                $('.gameart').addClass('bg-gray-50');
+                $('.dashboard').removeClass('bg-gray-50');
+            }
+           
+               
+
+
+           
+        });
+    </script>
 </body>
 
 </html>

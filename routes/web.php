@@ -15,6 +15,7 @@
 Route::get('profile/{id}', 'ArtController@index');
 Route::get('artist/{id}', 'ArtController@getArtist');
 Route::get('imgdetail/{id}', 'ArtController@getImgById');
+Route::get('category/{id}', 'ArtController@getArtById');
 Route::post('sendmail', 'MailController@sendmail');
 Route::post('upload', 'ArtController@imageupload');
 Route::get('welcome', 'Auth\LoginController@welcome');
