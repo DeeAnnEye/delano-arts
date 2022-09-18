@@ -21,7 +21,7 @@ class ArtController extends Controller
         return view('profile')->with("art",$arts);
       }
     public function imageupload(Request $request){
-        
+
         if($request->hasFile('file')){
             $filename = $request->file->getClientOriginalName();
             $request->file->storeAs('public/upload',$filename);
@@ -35,8 +35,38 @@ class ArtController extends Controller
             $value=DB::table('arts')->where('name', $filename)->first();
             $art_id=$value->id;
             $id = Auth::user()->id;
-
             DB::table('users')->where('id', $id)->update(['role' => 2]);
+
+
+            if($request->has('fantasy')){
+                $data=array('art_id'=>$art_id,'category_id'=>'1');
+                DB::table('art_category')->insert($data);
+            }
+            if($request->has('concept'))
+            {
+                $data=array('art_id'=>$art_id,'category_id'=>'2');
+                DB::table('art_category')->insert($data);
+            }
+            if($request->has('comic'))
+            {
+                $data=array('art_id'=>$art_id,'category_id'=>'4');
+                DB::table('art_category')->insert($data);
+            }
+            if($request->has('abstract'))
+            {
+                $data=array('art_id'=>$art_id,'category_id'=>'3');
+                DB::table('art_category')->insert($data);
+            }
+            if($request->has('illustration'))
+            {
+                $data=array('art_id'=>$art_id,'category_id'=>'5');
+                DB::table('art_category')->insert($data);
+            }
+            if($request->has('game'))
+            {
+                $data=array('art_id'=>$art_id,'category_id'=>'6');
+                DB::table('art_category')->insert($data);
+            }
 
             if($art_id && $id){
             $data=array('user_id'=>$id,'art_id'=>$art_id);

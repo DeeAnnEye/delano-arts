@@ -11,7 +11,9 @@
 |
 */
 
-
+Route::get('settings', function () {
+    return view('settings');
+});
 Route::get('profile/{id}', 'ArtController@index');
 Route::get('artist/{id}', 'ArtController@getArtist');
 Route::get('imgdetail/{id}', 'ArtController@getImgById');
