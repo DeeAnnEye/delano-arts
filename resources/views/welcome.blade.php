@@ -180,12 +180,14 @@
                 class="mx-2 mt-2 flex flex-auto flex-col w-1/3 max-h-screen mb-2 overflow-y-auto scrollbar-hide min-h-0 ">
                 <ul role="list" class="grid grid-cols-2 gap-2">
                     @foreach ($artData['data'] as $art)
+                    @if($art->active == '1')
                         <li class="col-span-1">
                             <div>
                                 <img class="h-50 w-50" src="{{ asset('storage/upload/' . $art->image) }}"
                                     alt="">
                             </div>
                         </li>
+                    @endif
                     @endforeach
                 </ul>
             </div>
