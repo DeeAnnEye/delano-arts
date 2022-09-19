@@ -126,6 +126,80 @@
                 </div>
               </div>
             @endif
+              <!-- modal start -->
+ 
+<div class="nameModal hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+ 
+ <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+ <div class="fixed inset-0 z-10 overflow-y-auto">
+   
+   <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+     <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+     <div class="nameClose absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+         <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+           <span class="sr-only">Close</span>
+           <!-- Heroicon name: outline/x-mark -->
+           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+           </svg>
+         </button>
+       </div>
+     <div>
+         <form action="{{url('updatename')}}" method="POST">
+         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+       <div>
+           <label for="name" class="block text-sm font-medium text-gray-700">Enter Name:</label>
+           <div class="mt-1">
+             <input type="text" name="name" id="name" class="block w-80 h-10 rounded-md border border-gray-400 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm" placeholder="">
+           </div>
+         </div>
+       </div>
+       <div class="mt-5 sm:mt-6">
+         <button type="submit" name="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:text-sm">Update</button>
+       </div>
+     </form>
+     </div>
+   </div>
+ </div>
+</div>
+<!-- modal end -->
+<!-- modal start -->
+ 
+<div class="emailModal hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+ 
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+      <div class="emailClose absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+          <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+            <span class="sr-only">Close</span>
+            <!-- Heroicon name: outline/x-mark -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      <div>
+          <form action="{{url('updateemail')}}" method="POST">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Enter Email:</label>
+            <div class="mt-1">
+              <input type="text" name="email" id="email" class="block w-80 h-10 rounded-md border border-gray-400 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 sm:mt-6">
+          <button type="submit" name="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:text-sm">Update</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
 
   <!-- Content area -->
   <main class="flex-1">
@@ -148,7 +222,7 @@
                         <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <span class="flex-grow">{{Auth::user()->name}}</span>
                           <span class="ml-4 flex-shrink-0">
-                            <button type="button" class="rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
+                            <button type="button" class="updateName rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
                           </span>
                         </dd>
                       </div>
@@ -156,12 +230,12 @@
                         <dt class="text-sm font-medium text-gray-500">Photo</dt>
                         <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <span class="flex-grow">
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            <img class="h-8 w-8 rounded-full" src="{{ asset('storage/upload/' . Auth::user()->image) }}" alt="">
                           </span>
                           <span class="ml-4 flex flex-shrink-0 items-start space-x-4">
-                            <button type="button" class="rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
+                            <button type="button" class="updateImg rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
                             <span class="text-gray-300" aria-hidden="true">|</span>
-                            <button type="button" class="rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Remove</button>
+                            <a href="{{ url('deleteImg') }}"><button type="button" class="rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Remove</button></a>
                           </span>
                         </dd>
                       </div>
@@ -170,7 +244,7 @@
                         <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <span class="flex-grow">{{Auth::user()->email}}</span>
                           <span class="ml-4 flex-shrink-0">
-                            <button type="button" class="rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
+                            <button type="button" class="updateEmail rounded-md bg-white font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Update</button>
                           </span>
                         </dd>
                       </div>
@@ -279,6 +353,62 @@
                 </div>
               </div>
         </div>
+
+        <div class="userImg hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+                <div class="fixed inset-0 z-10 overflow-y-auto">
+                  <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                      <div>
+
+                        <form action="{{url('imageUpload')}}" method="POST" enctype="multipart/form-data">
+
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="mx-auto flex items-center justify-center">
+                          <!-- Heroicon name: outline/check -->
+                          <h3 class="text-lg font-medium leading-6 text-gray-900">Update Your Profile Picture</h3>
+                        </div>
+                        <div class="closeButton absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+                          <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+                            <span class="sr-only">Close</span>
+                            <!-- Heroicon name: outline/x-mark -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-5">
+                        <div class="mt-1 sm:col-span-2 sm:mt-0">
+                                <div class="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                                  <div class="space-y-1 text-center">
+                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                      <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <div class="flex text-sm text-gray-600">
+                                      <label for="upload" class="relative cursor-pointer rounded-md bg-white font-medium text-pink-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-pink-500 focus-within:ring-offset-2 hover:text-pink-500">
+                                        Choose file
+                                      </label>
+                                      <input id="upload" name="file" type="file" class="sr-only">
+                                    </div>
+                                    <p class="imageText text-xs text-gray-500">PNG, JPG, GIF</p>
+                                  </div>
+                                </div>
+                                <div class="mt-5 sm:mt-6">
+                                  <button type="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-pink-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:text-sm">Update Profile Picture</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
     
   </div>
 </div>
@@ -287,6 +417,10 @@
 
             $('.closeButton').on('click', function(e){
                 $('.artModal').addClass('hidden');
+            });
+
+            $('.closeButton').on('click', function(e){
+                $('.userImg').addClass('hidden');
             });
 
             $('.closeB').on('click', function(e){
@@ -309,9 +443,32 @@
             $('.imageText').addClass('hidden');
             });
 
+            $('#upload').change(function() {
+            var i = $(this).prev('label').clone();
+            var file = $('#upload')[0].files[0].name;
+            $(this).prev('label').text(file);
+            $('.imageText').addClass('hidden');
+            });
+
+            $('.updateName').on('click', function(e){
+                $('.nameModal').removeClass('hidden');
+            });
+            $('.nameClose').on('click', function(e){
+                $('.nameModal').addClass('hidden');
+            });
+            $('.updateEmail').on('click', function(e){
+                $('.emailModal').removeClass('hidden');
+            });
+            $('.emailClose').on('click', function(e){
+                $('.emailModal').addClass('hidden');
+            });
+            $('.updateImg').on('click', function(e){
+                $('.userImg').removeClass('hidden');
+            });
             $('.alertClose').on('click', function(e){
                 $('.sessionAlert').addClass('hidden');
             });
+
         });
     </script>
     </body>

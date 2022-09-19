@@ -287,7 +287,7 @@
             <div class="aspect-w-6 aspect-h-7 block w-full overflow-hidden rounded-lg">
               <img src="{{ asset('storage/upload/' . session('artimage')) }}" alt="" class="object-cover">
             </div>
-            <div class="mt-4 flex items-start justify-between">
+            <div class="mt-2 flex items-start justify-between">
               <div>
                 <h2 class="text-lg font-medium text-gray-900"><span class="sr-only">Details for </span>{{ session('artname') }}</h2>
               </div>
@@ -295,7 +295,7 @@
           </div>
           <div>
             <h3 class="font-medium text-gray-900">Information</h3>
-            <dl class="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200">
+            <dl class="divide-y divide-gray-200 border-t border-b border-gray-200">
               <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Uploaded by</dt>
                 <dd class="whitespace-nowrap text-gray-900">{{Auth::user()->name}}</dd>
@@ -306,14 +306,19 @@
                 <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime(session('artcreated')))}}</dd>
               </div>
 
-              <div class="flex justify-between py-3 text-sm font-medium">
+              <!-- <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Last modified</dt>
                 <dd class="whitespace-nowrap text-gray-900">{{date('d-m-Y', strtotime(session('artupdated')))}}</dd>
-              </div>
+              </div> -->
 
               <div class="flex justify-between py-3 text-sm font-medium">
                 <dt class="text-gray-500">Dimensions</dt>
                 <dd class="whitespace-nowrap text-gray-900">{{ session('artwidth') }} x {{ session('artheight') }}</dd>
+              </div>
+
+              <div class="flex justify-center py-3 text-sm font-medium">
+              <a download="art" href="{{ Storage::url('upload/' . session('artimage')) }}" title="art"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Download</button></a>
+              <!-- <button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Delete</button> -->
               </div>
 
             </dl>
