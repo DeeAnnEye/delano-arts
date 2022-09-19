@@ -84,6 +84,7 @@ class ArtController extends Controller
     }
     public static function getImgById($id){
         $value=DB::table('arts')->where('id', $id)->first();
+        $artId=$value->id;
         $name=$value->name;
         $image=$value->image;
         $width=$value->i_width;
@@ -92,6 +93,7 @@ class ArtController extends Controller
         $updated=$value->updated_at;
 
         return redirect()->back()
+        ->with("artid",$artId)
         ->with("artname",$name)
         ->with("artimage",$image)
         ->with("artwidth",$width)
@@ -129,9 +131,9 @@ class ArtController extends Controller
         ->with("catId",$id);
       }
 
-      public function deleteArt($name)
+      public function deleteArt($id)
       {
-          DB::table('arts')->where('name', $name)->update(['active' => '0']);
+          DB::table('arts')->where('id', $id)->update(['active' => '0']);
           return redirect()->back()->with('message', 'Art Deleted.');
       }
 

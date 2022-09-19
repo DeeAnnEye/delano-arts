@@ -18,7 +18,7 @@ Route::post('updatename','UserController@updateNameById');
 Route::post('updateemail','UserController@updateEmailById');
 Route::post('imageUpload','UserController@updateImgById');
 Route::get('deleteImg','UserController@deleteImgById');
-Route::get('deleteArt/{name}','ArtController@deleteArt');
+Route::get('deleteArt/{id}','ArtController@deleteArt');
 Route::get('profile/{id}', 'ArtController@index');
 Route::get('artist/{id}', 'ArtController@getArtist');
 Route::get('imgdetail/{id}', 'ArtController@getImgById');

@@ -320,7 +320,7 @@
 
               <div class="flex justify-between py-3 text-sm font-medium">
               <a download="art" href="{{ Storage::url('upload/' . session('artimage')) }}" title="art"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Download</button></a>
-              <a href="{{url('/deleteArt', session('artname'))}}"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Delete</button></a>
+              <a href="{{url('/deleteArt', session('artid'))}}"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Delete</button></a>
               </div>
 
             </dl>
