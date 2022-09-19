@@ -129,4 +129,10 @@ class ArtController extends Controller
         ->with("catId",$id);
       }
 
+      public function deleteArt($name)
+      {
+          DB::table('arts')->where('name', $name)->update(['active' => '0']);
+          return redirect()->back()->with('message', 'Art Deleted.');
+      }
+
 }

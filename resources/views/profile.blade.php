@@ -141,6 +141,7 @@
           @if(!$art['data']->isEmpty())
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
             @foreach($art['data'] as $art)  
+            @if($art->active == '1')
             <li class="relative">
                 <a href="{{url('/imgdetail', $art->id)}}">
                 <div id="{{ $art->id }}" class="imgRing group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
@@ -153,7 +154,8 @@
                 </a>
                 <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{{ $art->name }}</p>
                 <p class="pointer-events-none block text-sm font-medium text-gray-500">{{ $art->i_width }} x {{ $art->i_height }}</p>
-              </li>             
+              </li> 
+              @endif            
               @endforeach
             </ul>
           @else
@@ -316,9 +318,9 @@
                 <dd class="whitespace-nowrap text-gray-900">{{ session('artwidth') }} x {{ session('artheight') }}</dd>
               </div>
 
-              <div class="flex justify-center py-3 text-sm font-medium">
+              <div class="flex justify-between py-3 text-sm font-medium">
               <a download="art" href="{{ Storage::url('upload/' . session('artimage')) }}" title="art"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Download</button></a>
-              <!-- <button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Delete</button> -->
+              <a href="{{url('/deleteArt', session('artname'))}}"><button type="button" class="inline-flex items-center rounded-full border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Delete</button></a>
               </div>
 
             </dl>
