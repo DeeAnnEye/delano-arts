@@ -119,7 +119,7 @@
                         </nav>
                     </div>
                     <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-                        <a href="{{ url('/profile', Auth::user()->id) }}" class="flex-shrink-0 w-full group block">
+                        <a href="{{ url('/profile') }}" class="flex-shrink-0 w-full group block">
                             <div class="flex items-center">
                                 <div>
                                     <img class="inline-block h-9 w-9 rounded-full"
