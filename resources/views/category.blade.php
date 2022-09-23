@@ -121,11 +121,11 @@
                         </nav>
                     </div>
                     <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-                        <a href="{{ url('/profile', Auth::user()->id) }}" class="flex-shrink-0 w-full group block">
+                        <a href="{{ url('/profile') }}" class="flex-shrink-0 w-full group block">
                             <div class="flex items-center">
                                 <div>
                                     <img class="inline-block h-9 w-9 rounded-full"
-                                        src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+                                        src="{{ asset('storage/upload/' . Auth::user()->image) }}"
                                         alt="">
                                 </div>
                                 <div class="ml-3">
